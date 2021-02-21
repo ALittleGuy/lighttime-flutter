@@ -1,24 +1,20 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 
-final ThemeReducer = combineReducers<Theme>([
-    TypedReducer<Theme , ThemeRefresh>(_refresh)
+final ThemeReducer = combineReducers<ThemeData>([
+  TypedReducer<ThemeData, ThemeRefreshAction>(_refresh)
 ]);
 
 
-Theme _refresh(Theme theme, action){
-
-  theme = action.themeData;
-  return theme;
-
+ThemeData _refresh(ThemeData themeData, action) {
+  themeData = action.themeData;
+  return themeData;
 }
 
 
-class ThemeRefresh{
+class ThemeRefreshAction {
 
-  Theme theme;
+  ThemeData themeData;
 
-  ThemeRefresh(this.theme);
+  ThemeRefreshAction(this.themeData);
 }

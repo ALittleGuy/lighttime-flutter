@@ -1,7 +1,9 @@
 {
   "id": 5,
-  "username": "prh",
-  "password": "123",
-  "email": "123",
-  "phone": "123",
-  "token": null}
+  "username": "username",
+  "password": "password",
+  "email": "email@email.com",
+  "phone": "12345678910",
+  "avatar": "avatar.jpg",
+  "token": null
+}

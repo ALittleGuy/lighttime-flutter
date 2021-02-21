@@ -3,13 +3,17 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:lighttime_flutter/app.dart';
-import 'package:lighttime_flutter/models/index.dart';
-import 'package:lighttime_flutter/network/httpManager.dart';
+import 'package:lighttime_flutter/channel/taskChannel.dart';
+import 'package:lighttime_flutter/common/api/behaviour.dart';
+import 'package:lighttime_flutter/common/global.dart';
 
-void main() {
-  runApp(App());
+import 'common/page/home.dart';
+import 'common/page/login.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Global.init().then((value) => runApp(App()));
 }
-
 
 // class MyApp extends StatelessWidget {
 //   // This widget is the root of your application.

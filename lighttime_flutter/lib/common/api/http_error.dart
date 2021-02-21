@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:lighttime_flutter/network/httpManager.dart';
 
 class HttpError {
   static const int UNAUTHORIZED = 401;
@@ -43,9 +42,9 @@ class HttpError {
 
   String message;
 
-  HttpError(this.code , this.message);
+  HttpError(this.code, this.message);
 
-  HttpError.dioError(DioError dioError){
+  HttpError.dioError(DioError dioError) {
     message = dioError.message;
     switch (dioError.type) {
       case DioErrorType.CONNECT_TIMEOUT:
@@ -80,6 +79,4 @@ class HttpError {
     // TODO: implement toString
     return 'HttpError{code: $code , message: $message}';
   }
-
-
 }

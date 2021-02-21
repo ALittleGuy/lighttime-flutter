@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:lighttime_flutter/common/api/networkConfig.dart';
 
 import 'http_error.dart';
 
@@ -31,8 +32,8 @@ class HttpManager {
   HttpManager._internal() {
     if (_client == null) {
       _client = new Dio(BaseOptions(
-          baseUrl: 'http://10.0.2.2:8080/',
-          headers: {"Authorization": "Basic dXNlcjpwYXNz"}));
+          baseUrl: "http://${NetWorkConfig.URL}/",
+          responseType: ResponseType.plain));
     }
   }
 
